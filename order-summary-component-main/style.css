@@ -37,7 +37,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 98vh;
+    min-height: 98vh;
     width: 100%;
     padding: 1.5rem;
 }
