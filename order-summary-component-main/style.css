@@ -1,7 +1,12 @@
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
 /* ---------------------------------- General styling */
 :root {
     --pale-blue: 225, 100%, 94%;
     --bright-blue: 245, 75%, 52%;
+    --desaturated-bright-blue: 230, 55%, 52%;
     --very-pale-blue: 225, 100%, 98%;
     --desaturated-blue: 224, 23%, 55%;
     --dark-blue: 223, 47%, 23%;
@@ -18,10 +23,15 @@ body {
     margin: 0;
 }
 
+button {
+    cursor: pointer;
+}
+
 /* --------------------------------- Main container */
 main {
     background-image: url("./images/pattern-background-mobile.svg");
     background-color: hsl(var(--pale-blue));
+    background-size: contain;
     background-position: top;
     background-repeat: no-repeat;
     display: flex;
@@ -38,6 +48,7 @@ article {
     background-color: white;
     text-align: center;
     border-radius: 1rem;
+    box-shadow: 0 2rem 1.5rem -.5rem hsl(var(--desaturated-bright-blue), .15);
 }
 
 article p {
@@ -94,6 +105,11 @@ article header p {
 
 .plan a {
     font-weight: 700;
+    color: hsl(var(--bright-blue));
+}
+
+.plan a:active {
+    color: hsl(var(--bright-blue), 0.6);
 }
 
 .plan-item {
@@ -107,16 +123,14 @@ article header p {
 
 .plan-label {
     font-weight: 900;
-    color: black;
+    color: hsl(var(--dark-blue));
 }
 
 /* Buttons */
 button {
-    display: block;
     border: none;
     border-radius: 1rem;
     padding: 1rem;
-    width: 100%;
     font-weight: 700;
     font-size: 1rem;
     font-size: .95rem;
@@ -126,6 +140,12 @@ button {
     background-color: hsl(var(--bright-blue));
     color: white;
     margin-bottom: .5rem;
+    box-shadow: 0 1rem 1.5rem hsl(var(--bright-blue), 0.2);
+    width: 100%;
+}
+
+.btn-primary:active {
+    background-color: hsl(var(--bright-blue), 0.6);
 }
 
 .btn-secondary {
@@ -135,5 +155,28 @@ button {
     margin-bottom: .9rem;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.btn-secondary:active {
+    color: hsl(var(--dark-blue));
+}
+
+@media screen and (min-width: 450px){
+    main {
+        background-image: url("./images/pattern-background-desktop.svg");
+    }
+
+    article {
+        max-width: 450px;
+    }
+    
+    article h1 {
+        font-size: 1.7rem;
+    }
+
+    .content {
+        padding: 0 2.5rem;
+    }
+
+    .plan {
+        font-size: 1rem;
+    }
+}
