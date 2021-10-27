@@ -1,0 +1,145 @@
+:root {
+    --color-html: hsl(180, 50%, 50%);
+    --color-css: hsl(224, 50%, 50%);
+    --color-js: hsl(268, 50%, 50%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-size: 16px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: .5rem;
+    font-weight: bold;
+}
+
+p {
+    color: gray;
+}
+
+img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease-in-out;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 3rem;
+}
+
+article {
+    border-radius: .6rem;
+    border: 1px solid rgb(230, 230, 230);
+    transition: all .5s ease-in-out;
+}
+
+article:hover {
+    box-shadow: 0rem 2rem 3rem -2rem rgba(0, 0, 0, .2);
+}
+
+article:hover img {
+    transform: scale(1.05);
+}
+
+.article__hero {
+    overflow: hidden;
+    border-radius: .5rem .5rem 0 0;
+    height: 250px;
+}
+
+.article__content {
+    padding: 1.5rem;
+}
+
+.article__content > * {
+    margin-bottom: .5rem;
+}
+
+.article__content li:nth-child(1)
+{
+    color: var(--color-html);
+}
+
+.article__content li:nth-child(2)
+{
+    color: var(--color-css);
+}
+
+.article__content li:nth-child(3)
+{
+    color: var(--color-js);
+}
+
+header {
+    margin-bottom: 5rem;
+}
+
+header p {
+    color: black;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 3rem auto;
+}
+
+@media screen and (max-width: 1080px) {
+    body {
+        font-size: 15px;
+    }
+
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media screen and (max-width: 720px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    header {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    body {
+        font-size: 12px;
+    }
+
+    main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    
+}
